@@ -32,7 +32,7 @@ export function renderArticles(articles) {
         'input[name="showPublished"]:checked'
       ).value;
 
-// Filters the articles based on the selected radio button
+    // Filters the articles based on the selected radio button
     const filteredArticles = articles.filter((article) => {
         if (showPublished === "published") {
         return article.published;
@@ -68,6 +68,7 @@ export function renderArticles(articles) {
       body.innerText = article.body;
       articleDiv.appendChild(body);
       body.style.display = "none";
+      body.id = `article-body-${article.id}`; 
   
       // Creates a paragraph element for the published status of the article
       const published = document.createElement("p");
